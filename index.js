@@ -92,8 +92,10 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
 
-    if(top != 360) {
-      top += 2;
+    if(top < GAME_HEIGHT) {
+      window.requestAnimationFrame(moveRock);
+    } else {
+      rock.remove();
     }
 
     /**
